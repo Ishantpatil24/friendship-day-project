@@ -1,0 +1,957 @@
+/* =====================================
+   FRIENDSHIP DAY WEBSITE
+   CSS PART - 1
+   ===================================== */
+
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+html{
+    overflow-x:hidden;
+}
+
+body{
+
+    overflow-x:hidden;
+    color:#fff;
+
+    background:linear-gradient(
+        -45deg,
+        #ff6ec4,
+        #7873f5,
+        #4facfe,
+        #ff9a9e
+    );
+
+    background-size:400% 400%;
+
+    animation:bgAnimation 15s ease infinite;
+
+}
+
+
+/* Animated Background */
+
+@keyframes bgAnimation{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+
+/* Floating Hearts */
+
+.hearts{
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+
+.hearts::before,
+.hearts::after{
+
+    content:"❤";
+
+    position:absolute;
+
+    font-size:22px;
+
+    opacity:.15;
+
+    animation:floatHeart 14s linear infinite;
+
+}
+
+.hearts::before{
+
+    left:15%;
+    bottom:-50px;
+
+}
+
+.hearts::after{
+
+    right:18%;
+    bottom:-80px;
+
+    animation-delay:6s;
+
+}
+
+
+@keyframes floatHeart{
+
+    from{
+
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+        opacity:.2;
+
+    }
+
+    to{
+
+        transform:
+        translateY(-120vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+/* HERO SECTION */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+
+
+.main-title{
+
+    font-size:4rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-shadow:
+
+    0 0 20px rgba(255,255,255,.5),
+
+    0 0 40px rgba(255,255,255,.3);
+
+    animation:titleGlow 3s ease infinite;
+
+}
+
+
+@keyframes titleGlow{
+
+    50%{
+
+        text-shadow:
+
+        0 0 40px white,
+
+        0 0 70px hotpink;
+
+    }
+
+}
+
+
+
+.subtitle{
+
+    margin-top:25px;
+
+    font-size:1.3rem;
+
+    width:70%;
+
+    line-height:1.8;
+
+    opacity:.95;
+
+}
+
+
+
+/* FRIEND CARD */
+
+.friend-card{
+
+    width:85%;
+
+    max-width:900px;
+
+    margin:100px auto;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.25);
+
+    text-align:center;
+
+    transition:.5s;
+
+}
+
+
+.friend-card:hover{
+
+    transform:
+
+    translateY(-10px)
+    scale(1.02);
+
+}
+
+
+.photo-box{
+
+    width:220px;
+
+    height:220px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    padding:8px;
+
+    background:linear-gradient(
+        45deg,
+        hotpink,
+        cyan,
+        violet
+    );
+
+    animation:rotateBorder 7s linear infinite;
+
+}
+
+
+@keyframes rotateBorder{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+.photo-box img{
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid white;
+
+}
+
+
+
+.friend-card h2{
+
+    margin-top:30px;
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+}
+
+
+.friend-card p{
+
+    margin-top:20px;
+
+    font-size:1.1rem;
+
+    line-height:2;
+
+    opacity:.95;
+
+}
+
+
+
+/* MUSIC BUTTON */
+
+#musicBtn{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    padding:16px 30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:linear-gradient(
+        45deg,
+        #ff416c,
+        #ff4b2b
+    );
+
+    box-shadow:
+
+    0 0 20px rgba(255,75,43,.6);
+
+    transition:.4s;
+
+    z-index:999;
+
+}
+
+
+#musicBtn:hover{
+
+    transform:
+
+    scale(1.08);
+
+    box-shadow:
+
+    0 0 35px rgba(255,75,43,.9);
+
+}
+/* 
+part 2 here */
+/* =====================================
+   CSS PART - 2A
+   Gallery + Message + Timeline
+   Paste this BELOW Part 1
+===================================== */
+
+
+/* ===========================
+        GALLERY
+=========================== */
+
+.gallery{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:100px auto;
+
+    text-align:center;
+
+}
+
+.gallery h2{
+
+    font-size:3rem;
+
+    margin-bottom:50px;
+
+    text-shadow:0 0 20px rgba(255,255,255,.5);
+
+}
+
+.gallery-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+
+.gallery-container img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    border:3px solid rgba(255,255,255,.25);
+
+    transition:.5s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+
+.gallery-container img:hover{
+
+    transform:
+
+    scale(1.07)
+    rotate(2deg);
+
+    box-shadow:
+
+    0 25px 50px rgba(255,255,255,.25);
+
+}
+
+
+
+/* ===========================
+      MESSAGE SECTION
+=========================== */
+
+.message{
+
+    width:85%;
+
+    max-width:900px;
+
+    margin:120px auto;
+
+    text-align:center;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.25);
+
+}
+
+
+.message h2{
+
+    font-size:2.8rem;
+
+    margin-bottom:35px;
+
+}
+
+
+.message p{
+
+    font-size:1.15rem;
+
+    line-height:2.2;
+
+}
+
+
+
+
+/* ===========================
+        TIMELINE
+=========================== */
+
+.timeline{
+
+    width:90%;
+
+    margin:120px auto;
+
+    text-align:center;
+
+}
+
+
+.timeline h2{
+
+    font-size:3rem;
+
+    margin-bottom:60px;
+
+}
+
+
+.timeline-box{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+}
+
+
+.event{
+
+    flex:1;
+
+    min-width:220px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    transition:.5s;
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.25);
+
+}
+
+
+.event:hover{
+
+    transform:
+
+    translateY(-12px)
+    scale(1.04);
+
+}
+
+
+.event span{
+
+    font-size:3rem;
+
+    display:block;
+
+    margin-bottom:20px;
+
+}
+
+
+.event p{
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+}
+
+/* part 3 here */
+/* ======================================
+        CSS PART - 3
+     Final Card + Footer
+======================================*/
+
+
+/* ===========================
+        FINAL CARD
+=========================== */
+
+.final-card{
+
+    width:85%;
+    max-width:900px;
+
+    margin:120px auto;
+
+    padding:60px 40px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
+
+    transition:.5s;
+
+}
+
+
+.final-card:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.02);
+
+}
+
+
+.final-card h2{
+
+    font-size:2.8rem;
+
+    margin-bottom:30px;
+
+    text-shadow:
+    0 0 20px rgba(255,255,255,.4);
+
+}
+
+
+.final-card p{
+
+    font-size:1.15rem;
+
+    line-height:2.1;
+
+}
+
+
+
+
+/* ===========================
+            FOOTER
+=========================== */
+
+footer{
+
+    margin-top:120px;
+
+    padding:70px 20px;
+
+    text-align:center;
+
+    background:rgba(0,0,0,.18);
+
+    backdrop-filter:blur(20px);
+
+}
+
+
+.your-photo{
+
+    width:170px;
+    height:170px;
+
+    margin:auto;
+
+    padding:6px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        45deg,
+        #ff0080,
+        cyan,
+        violet
+    );
+
+    animation:rotateBorder 8s linear infinite;
+
+}
+
+
+.your-photo img{
+
+    width:100%;
+    height:100%;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid white;
+
+}
+
+
+footer h3{
+
+    margin-top:25px;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+
+footer p{
+
+    margin-top:12px;
+
+    font-size:1.1rem;
+
+    opacity:.9;
+
+}
+
+
+
+/* ===========================
+        SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#ffffff20;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:white;
+
+    border-radius:20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ffe6f4;
+
+}
+
+
+
+/* ===========================
+      IMAGE HOVER EFFECT
+=========================== */
+
+img{
+
+    user-select:none;
+
+}
+
+
+.gallery img,
+.photo-box img,
+.your-photo img{
+
+    transition:.5s;
+
+}
+
+
+.gallery img:hover{
+
+    filter:
+    brightness(1.1)
+    saturate(1.3);
+
+}
+
+
+
+/* ===========================
+      SECTION SPACING
+=========================== */
+
+section{
+
+    animation:fadeUp 1s ease;
+
+}
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+
+/* ===========================
+      BUTTON ACTIVE
+=========================== */
+
+#musicBtn:active{
+
+    transform:scale(.95);
+
+}
+/* part 4 here */
+/* ===========================
+      RESPONSIVE DESIGN
+=========================== */
+
+@media (max-width:992px){
+
+    .main-title{
+        font-size:3rem;
+    }
+
+    .subtitle{
+        width:90%;
+        font-size:1.1rem;
+    }
+
+    .friend-card,
+    .message,
+    .final-card{
+        width:92%;
+        padding:35px;
+    }
+
+    .timeline-box{
+        justify-content:center;
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    .main-title{
+        font-size:2.4rem;
+    }
+
+    .gallery h2,
+    .timeline h2,
+    .message h2,
+    .final-card h2{
+        font-size:2rem;
+    }
+
+    .photo-box{
+        width:180px;
+        height:180px;
+    }
+
+    .your-photo{
+        width:140px;
+        height:140px;
+    }
+
+    #musicBtn{
+        right:15px;
+        bottom:15px;
+        padding:12px 20px;
+        font-size:15px;
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .main-title{
+        font-size:2rem;
+    }
+
+    .subtitle{
+        width:100%;
+        font-size:1rem;
+    }
+
+    .friend-card,
+    .message,
+    .final-card{
+        padding:25px;
+    }
+
+    .friend-card h2{
+        font-size:1.8rem;
+    }
+
+    .gallery-container{
+        grid-template-columns:1fr;
+    }
+
+    .event{
+        min-width:100%;
+    }
+
+}
